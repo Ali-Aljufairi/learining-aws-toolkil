@@ -5,22 +5,21 @@ version = 0.1
 [default]
 [default.global]
 [default.global.parameters]
-stack_name = "lambda_from_sam"
+stack_name = "lambda-hello-world"
 
 [default.build]
 [default.build.parameters]
-cached = true
 parallel = true
 
 [default.deploy]
 [default.deploy.parameters]
 capabilities = "CAPABILITY_IAM"
 confirm_changeset = true
-resolve_s3 = true
-
-[default.package]
-[default.package.parameters]
-resolve_s3 = true
+resolve_image_repos = true
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-1vh1h8exgoh4c"
+s3_prefix = "lambda-hello-world"
+region = "us-east-1"
+image_repositories = ["HelloWorldFunction=774001425172.dkr.ecr.us-east-1.amazonaws.com/lambdahelloworldfaa5c4be/helloworldfunction19d43fc4repo"]
 
 [default.sync]
 [default.sync.parameters]
